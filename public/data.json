@@ -1,0 +1,28 @@
+{
+  "user": {
+    "username": "Admin",
+    "password": "54321"
+  },
+  "tasks": [
+    {
+      "cateogry": "Sport",
+      "title": "Do Sports Exercises",
+      "id": "1"
+    },
+    {
+      "cateogry": "Work",
+      "title": "Finish Work Tasks",
+      "id": "2"
+    },
+    {
+      "cateogry": "SimpleTask",
+      "title": "Do Laundary",
+      "id": "3"
+    },
+    {
+      "cateogry": "Entertainment",
+      "title": "Play Games With Friends",
+      "id": 4
+    }
+  ]
+}
