@@ -12,3 +12,13 @@ body {
 body {
   font-family: "Roboto Mono", monospace;
 }
+a,
+a:active {
+  text-decoration: none;
+  color: currentColor;
+}
+ul,
+li,
+ol {
+  list-style: none;
+}
