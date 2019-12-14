@@ -5,8 +5,12 @@ import {
   REMOVE_TASK
 } from "../actions/Action";
 import uuid from "uuid/v4";
-const INITIALSTATE = {
-  user: null,
+import { IState } from "../interfaces/interfaces";
+const INITIALSTATE: IState = {
+  user: {
+    username: "",
+    password: ""
+  },
   isAuthorized: false,
   tasks: []
 };

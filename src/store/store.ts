@@ -19,14 +19,12 @@ function loadFromLocalState() {
   }
 }
 const storedState = loadFromLocalState();
+const composeEnhancers =
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const AppStore = createStore(
   reducer,
   storedState,
-  compose(
-    applyMiddleware(thunk),
-    (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
-      (window as any).__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  composeEnhancers(applyMiddleware(thunk))
 );
 AppStore.subscribe(() => saveToLocalStorage(AppStore.getState()));
 export default AppStore;

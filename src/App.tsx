@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import "./App.css";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Tasks } from "./pages/Tasks";
 import { Profile } from "./pages/Profile";
 import { Header } from "./components/Header";
+import { fetchingData } from "./actions/Action";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App: React.FC = () => {
+  const dispatch = useDispatch();
+  const getData = () => dispatch(fetchingData());
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line
+  }, []);
   return (
     <Router>
       <Header />

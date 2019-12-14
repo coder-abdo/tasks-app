@@ -1,28 +1,14 @@
 import React from "react";
-import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { FaRegUserCircle } from "react-icons/fa";
 import { REMOVE_TASK } from "../actions/Action";
 import Task from "../components/Task";
 import Tasks from "../components/Tasks";
-const ProfileInfo = styled.div`
-  padding: 13vh 4vw 2vh;
-  display: flex;
-  align-items: center;
-  span {
-    margin-left: 0.5vw;
-  }
-  .tasks-num {
-    margin-left: auto;
-  }
-  @media (max-width: 600px) {
-    padding-top: 18vh;
-  }
-`;
+import { ProfileInfo } from "../styles/ProfileStyle";
+import { IState, ITask } from "../interfaces/interfaces";
 export const Profile = () => {
-  const tasks = useSelector((state: any) => state.tasks);
+  const tasks: ITask[] = useSelector((state: IState) => state.tasks);
   const dispatch = useDispatch();
-  // console.log(tasks);
   return (
     <>
       <ProfileInfo>
@@ -31,7 +17,7 @@ export const Profile = () => {
         <span className="tasks-num">tasks: {tasks.length}</span>
       </ProfileInfo>
       <Tasks>
-        {tasks.map((task: any) => (
+        {tasks.map((task: ITask) => (
           <Task
             key={task.id}
             {...task}
