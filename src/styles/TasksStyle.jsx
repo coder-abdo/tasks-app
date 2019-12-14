@@ -21,6 +21,7 @@ const TaskForm = styled.form`
       margin-bottom: 2vh;
       width: 100%;
       font-size: 4vw;
+      padding: 2vh 0;
     }
     ::placeholder {
       font-size: 1.2vw;
@@ -51,6 +52,7 @@ const TaskForm = styled.form`
     @media (max-width: 600px) {
       width: 100%;
       font-size: 4vw;
+      padding: 2vh 2vw;
     }
   }
 `;

@@ -2,6 +2,25 @@ import styled from "styled-components";
 const LoginContainer = styled.div`
   padding: 13vh 4vw 2vh;
   text-transform: capitalize;
+  @media (max-width: 600px) {
+    padding-top: 16vh;
+  }
+  .err-message {
+    min-width: 60vw;
+    width: 100%;
+    background-color: #fff;
+    color: #f12;
+    font-size: 2vw;
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    border: none;
+    margin: 4vh 0;
+    padding: 4vh 0;
+    @media (max-width: 600px) {
+      font-size: 4vw;
+    }
+  }
   h2 {
     font-size: 4vw;
     font-weight: 500;
@@ -13,6 +32,9 @@ const LoginForm = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
   input {
     border: 1px solid #eee;
     text-indent: 10px;
@@ -25,6 +47,7 @@ const LoginForm = styled.form`
       margin-bottom: 2vh;
       width: 100%;
       font-size: 4vw;
+      padding: 2vh 0;
     }
     ::placeholder {
       font-size: 1.2vw;
@@ -55,6 +78,7 @@ const LoginForm = styled.form`
     @media (max-width: 600px) {
       width: 100%;
       font-size: 4vw;
+      padding: 2vh 2vw;
     }
   }
 `;

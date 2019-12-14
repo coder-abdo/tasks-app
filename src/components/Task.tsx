@@ -4,7 +4,7 @@ import { AppTask } from "../styles/TaskStyle";
 import { IProps } from "../interfaces/interfaces";
 const Task = ({ title, cateogry, handleRemoveTask }: IProps) => {
   return (
-    <AppTask>
+    <AppTask data-testid="task">
       <h2 className="task-title">{title}</h2>
       <div className="cateogry">
         <FaTag />

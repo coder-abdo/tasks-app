@@ -10,6 +10,7 @@ export const Login = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [err, setErr] = useState<string>("");
   const history = useHistory();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -19,7 +20,13 @@ export const Login = () => {
       dispatch({ type: AUTHORIZED_USER });
       history.push("/");
     } else {
-      alert("error info");
+      if (username !== userInfo.username) {
+        setErr("username does not matched");
+      } else if (password !== userInfo.password) {
+        setErr("password does not matched");
+      } else {
+        setErr("your password or username does not matched");
+      }
     }
     setUsername("");
     setPassword("");
@@ -52,6 +59,7 @@ export const Login = () => {
         />
         <button type="submit">Login</button>
       </LoginForm>
+      {err && <div className="err-message">{err}</div>}
     </LoginContainer>
   );
 };

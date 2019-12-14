@@ -8,7 +8,7 @@ export const Header = () => {
   const isAuthorized = useSelector((state: IState) => state.isAuthorized);
 
   return (
-    <AppHeader>
+    <AppHeader data-testid="header">
       <nav>
         <AppLogo>
           <Link to="/" className="logo">
