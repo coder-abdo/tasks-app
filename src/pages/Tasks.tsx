@@ -3,14 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { ADD_TASK, REMOVE_TASK } from "../actions/Action";
 import AppTasks from "../components/Tasks";
 import Task from "../components/Task";
-import TaskForm from "../styles/TasksStyle";
+import TaskForm, { ErrMessage } from "../styles/TasksStyle";
 import { IState, ITask } from "../interfaces/interfaces";
 export const Tasks = () => {
   const tasks: ITask[] = useSelector((state: IState) => state.tasks);
   const dispatch = useDispatch();
-  const [title, setTitle] = useState("");
-  const [cateogry, setCateogry] = useState("");
-  const validateForm = () => title.length && cateogry.length;
+  const [title, setTitle] = useState<string>("");
+  const [cateogry, setCateogry] = useState<string>("");
+  const [err, setErr] = useState<string>("");
+  const validateForm = () => title.trim().length && cateogry.trim().length;
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
@@ -22,7 +23,7 @@ export const Tasks = () => {
         }
       });
     } else {
-      alert("error");
+      setErr("please fill the field");
     }
 
     setTitle("");
@@ -57,6 +58,7 @@ export const Tasks = () => {
           Add Task
         </button>
       </TaskForm>
+      {err && <ErrMessage>{err}</ErrMessage>}
       <AppTasks>
         {tasks.map((task: ITask) => (
           <Task

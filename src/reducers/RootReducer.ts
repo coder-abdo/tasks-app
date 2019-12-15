@@ -33,7 +33,6 @@ export const reducer = (state = INITIALSTATE, { type, payload }) => {
         tasks: [...state.tasks, { id: uuid(), ...payload }]
       };
     case REMOVE_TASK:
-      let newTasks = state.tasks.filter((task: any) => task.id !== payload);
       return {
         ...state,
         tasks: state.tasks.filter((task: any) => task.id !== payload)

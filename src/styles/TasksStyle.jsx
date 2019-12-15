@@ -56,4 +56,19 @@ const TaskForm = styled.form`
     }
   }
 `;
+export const ErrMessage = styled.div`
+  min-width: 60vw;
+  background-color: #fff;
+  color: #f12;
+  font-size: 2vw;
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  border: none;
+  margin: 4vh 4vw;
+  padding: 4vh 0;
+  @media (max-width: 600px) {
+    font-size: 4vw;
+  }
+`;
 export default TaskForm;
