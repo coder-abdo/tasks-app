@@ -34,11 +34,11 @@ export const Login = () => {
   return (
     <LoginContainer>
       <h2>hello welcome back</h2>
-      <LoginForm onSubmit={handleSubmit}>
+      <LoginForm onSubmit={handleSubmit} data-testid="form">
         <input
           type="text"
           name="user"
-          id="user"
+          data-testid="user"
           placeholder="Username"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setUsername(e.target.value)
@@ -49,7 +49,7 @@ export const Login = () => {
         <input
           type="password"
           name="password"
-          id="pass"
+          data-testid="pass"
           placeholder="Password"
           value={password}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -59,7 +59,11 @@ export const Login = () => {
         />
         <button type="submit">Login</button>
       </LoginForm>
-      {err && <div className="err-message">{err}</div>}
+      {err && (
+        <div className="err-message" data-testid="err">
+          {err}
+        </div>
+      )}
     </LoginContainer>
   );
 };

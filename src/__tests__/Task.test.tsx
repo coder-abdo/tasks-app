@@ -10,7 +10,14 @@ beforeEach(cleanup);
 
 describe("<Task />", () => {
   it("render Task Component", () => {
-    const { queryByTestId, queryByText } = render(<Task />);
+    const mockData = {
+      id: "1",
+      title: "learn testing",
+      cateogry: "studying",
+      handleRemoveTask: jest.fn()
+    };
+    const { queryByTestId } = render(<Task {...mockData} />);
     expect(queryByTestId("task")).toBeTruthy();
+    expect(queryByTestId("task")).toMatchSnapshot();
   });
 });

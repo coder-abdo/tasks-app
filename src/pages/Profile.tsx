@@ -14,7 +14,9 @@ export const Profile = () => {
       <ProfileInfo>
         <FaRegUserCircle />
         <span>Admin </span>
-        <span className="tasks-num">tasks: {tasks.length}</span>
+        <span className="tasks-num" data-testid="tasks-numbers">
+          tasks: {tasks.length}
+        </span>
       </ProfileInfo>
       <Tasks>
         {tasks.map((task: ITask) => (

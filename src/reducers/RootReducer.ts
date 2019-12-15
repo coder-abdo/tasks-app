@@ -36,7 +36,7 @@ export const reducer = (state = INITIALSTATE, { type, payload }) => {
       let newTasks = state.tasks.filter((task: any) => task.id !== payload);
       return {
         ...state,
-        tasks: newTasks
+        tasks: state.tasks.filter((task: any) => task.id !== payload)
       };
     default:
       return state;

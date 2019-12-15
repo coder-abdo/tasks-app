@@ -34,6 +34,7 @@ export const Tasks = () => {
       <h2>control your tasks</h2>
       <TaskForm onSubmit={handleSubmit}>
         <input
+          data-testid="task-title"
           type="text"
           value={title}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -48,10 +49,13 @@ export const Tasks = () => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCateogry(e.target.value)
           }
+          data-testid="task-cateogry"
           placeholder="task category"
           required
         />
-        <button type="submit">Add Task</button>
+        <button type="submit" data-testid="submiting">
+          Add Task
+        </button>
       </TaskForm>
       <AppTasks>
         {tasks.map((task: ITask) => (

@@ -2,6 +2,7 @@ import React from "react";
 import { FaTag, FaTimes } from "react-icons/fa";
 import { AppTask } from "../styles/TaskStyle";
 import { IProps } from "../interfaces/interfaces";
+
 const Task = ({ title, cateogry, handleRemoveTask }: IProps) => {
   return (
     <AppTask data-testid="task">
