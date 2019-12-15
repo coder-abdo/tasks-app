@@ -7,13 +7,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 beforeEach(cleanup);
 describe("<Header />", () => {
   it("render the header of the app", () => {
-    const { queryByTestId } = render(
+    const HeaderComponent = render(
       <Provider store={Store}>
         <Router>
           <Header />
         </Router>
       </Provider>
     );
-    expect(queryByTestId("header")).toBeTruthy();
+    expect(HeaderComponent).toBeTruthy();
+    expect(HeaderComponent).toMatchSnapshot();
   });
 });
