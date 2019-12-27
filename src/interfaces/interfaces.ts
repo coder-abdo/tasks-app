@@ -11,6 +11,7 @@ export interface ITask {
   cateogry: string;
   title: string;
   id: string;
+  date: Date;
   handleRemoveTask?: handleRemoveTask;
 }
 export interface IProps extends ITask {

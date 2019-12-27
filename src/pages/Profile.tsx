@@ -6,7 +6,8 @@ import Task from "../components/Task";
 import Tasks from "../components/Tasks";
 import { ProfileInfo } from "../styles/ProfileStyle";
 import { IState, ITask } from "../interfaces/interfaces";
-export const Profile = () => {
+
+const Profile = () => {
   const tasks: ITask[] = useSelector((state: IState) => state.tasks);
   const dispatch = useDispatch();
   return (
@@ -19,16 +20,21 @@ export const Profile = () => {
         </span>
       </ProfileInfo>
       <Tasks>
-        {tasks.map((task: ITask) => (
-          <Task
-            key={task.id}
-            {...task}
-            handleRemoveTask={() =>
-              dispatch({ type: REMOVE_TASK, payload: task.id })
-            }
-          />
-        ))}
+        {tasks
+          .sort((a, b) => {
+            return +b.date - +a.date;
+          })
+          .map((task: ITask) => (
+            <Task
+              key={task.id}
+              {...task}
+              handleRemoveTask={() =>
+                dispatch({ type: REMOVE_TASK, payload: task.id })
+              }
+            />
+          ))}
       </Tasks>
     </>
   );
 };
+export default Profile;

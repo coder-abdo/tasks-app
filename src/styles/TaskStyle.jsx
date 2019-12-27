@@ -1,8 +1,10 @@
 import styled from "styled-components";
 // styling task component
 export const AppTask = styled.div`
-  min-width: 30vw;
-  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 2vh 3vw;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.15);
   position: relative;
@@ -11,6 +13,7 @@ export const AppTask = styled.div`
   }
   .cateogry {
     display: flex;
+
     align-items: center;
     span {
       margin-left: 0.3vw;

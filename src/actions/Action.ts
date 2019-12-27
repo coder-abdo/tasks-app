@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { ITask } from "../interfaces/interfaces";
 export const FETCH_DATA: string = "FETCH_DATA";
 export const AUTHORIZED_USER: string = "AUTHORIZED_USER";
 export const ADD_TASK: string = "ADD_TASK";
@@ -11,7 +12,10 @@ export const fetchingData = () => {
         type: FETCH_DATA,
         payload: {
           user: data.user,
-          tasks: data.tasks
+          tasks: data.tasks.map((task: ITask) => ({
+            ...task,
+            date: new Date()
+          }))
         }
       })
     );

@@ -18,13 +18,15 @@ export const Home = () => {
         <p>tasky app is your place to control your tasks around day</p>
       </HomeJumbotron>
       <Tasks>
-        {tasks.map((task: ITask) => (
-          <Task
-            key={task.id}
-            {...task}
-            handleRemoveTask={() => handleRemoveTask(task.id)}
-          />
-        ))}
+        {tasks
+          .sort((a, b) => +b.date - +a.date)
+          .map((task: ITask) => (
+            <Task
+              key={task.id}
+              {...task}
+              handleRemoveTask={() => handleRemoveTask(task.id)}
+            />
+          ))}
       </Tasks>
     </>
   );

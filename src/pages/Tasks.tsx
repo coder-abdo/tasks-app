@@ -27,7 +27,7 @@ export const Tasks = () => {
     }
 
     setTitle("");
-    setTitle("");
+    setCateogry("");
   };
 
   return (
@@ -60,15 +60,17 @@ export const Tasks = () => {
       </TaskForm>
       {err && <ErrMessage>{err}</ErrMessage>}
       <AppTasks>
-        {tasks.map((task: ITask) => (
-          <Task
-            key={task.id}
-            {...task}
-            handleRemoveTask={() =>
-              dispatch({ type: REMOVE_TASK, payload: task.id })
-            }
-          />
-        ))}
+        {tasks
+          .sort((a, b) => +b.date - +a.date)
+          .map((task: ITask) => (
+            <Task
+              key={task.id}
+              {...task}
+              handleRemoveTask={() =>
+                dispatch({ type: REMOVE_TASK, payload: task.id })
+              }
+            />
+          ))}
       </AppTasks>
     </div>
   );

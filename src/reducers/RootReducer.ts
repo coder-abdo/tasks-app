@@ -30,7 +30,7 @@ export const reducer = (state = INITIALSTATE, { type, payload }) => {
     case ADD_TASK:
       return {
         ...state,
-        tasks: [...state.tasks, { id: uuid(), ...payload }]
+        tasks: [...state.tasks, { id: uuid(), date: new Date(), ...payload }]
       };
     case REMOVE_TASK:
       return {

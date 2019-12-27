@@ -4,7 +4,7 @@ import "./App.css";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Tasks } from "./pages/Tasks";
-import { Profile } from "./pages/Profile";
+import Profile from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
 import { Header } from "./components/Header";
 import { fetchingData } from "./actions/Action";

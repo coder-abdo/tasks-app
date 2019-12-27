@@ -49,6 +49,38 @@ const LoginForm = styled.form`
       font-size: 4vw;
       padding: 2vh 0;
     }
+    ::-webkit-input-placeholder {
+      font-size: 1.2vw;
+      color: #ccc;
+      text-transform: capitalize;
+      @media (max-width: 600px) {
+        font-size: 3vw;
+      }
+    }
+    ::-moz-placeholder {
+      font-size: 1.2vw;
+      color: #ccc;
+      text-transform: capitalize;
+      @media (max-width: 600px) {
+        font-size: 3vw;
+      }
+    }
+    :-ms-input-placeholder {
+      font-size: 1.2vw;
+      color: #ccc;
+      text-transform: capitalize;
+      @media (max-width: 600px) {
+        font-size: 3vw;
+      }
+    }
+    :moz-placeholder {
+      font-size: 1.2vw;
+      color: #ccc;
+      text-transform: capitalize;
+      @media (max-width: 600px) {
+        font-size: 3vw;
+      }
+    }
     ::placeholder {
       font-size: 1.2vw;
       color: #ccc;
